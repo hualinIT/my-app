@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Routes from './routes/index.jsx';
+// import logo from './logo.svg';
 import './App.css';
-import { CLIENT_RENEG_LIMIT } from 'tls';
+// import { CLIENT_RENEG_LIMIT } from 'tls';
 
 class App extends Component {
 
@@ -47,8 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <div><span>{this.count}</span></div>
-       <div><span>{this.state.count}</span></div>
+        <Routes />
       </div>
     );
   }
