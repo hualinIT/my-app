@@ -12,7 +12,15 @@ class Home extends React.Component {
                 </div>
                 
                 <div className="mb-20">
-                    <Link to="/about">go to About</Link>
+                    <Link to="/setState">go to setState</Link>
+                </div>
+
+                <div className="mb-20">
+                    <Link to="/provider">go to provider</Link>
+                </div>
+
+                <div className="mb-20">
+                    <Link to="/providerOld">go to providerOld</Link>
                 </div>
             </div>
         );

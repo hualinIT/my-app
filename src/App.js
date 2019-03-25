@@ -6,44 +6,9 @@ import './App.css';
 
 class App extends Component {
 
-  count = 1;
-
-  state = {
-    count: 2
-  }
-
-  static getDerivedStateFromProps(nextProps, preState) {
-    console.log({nextProps, preState})
-  }
-
-  // componentWillMount() {
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
+  // static getDerivedStateFromProps(nextProps, preState) {
+  //   console.log({nextProps, preState})
   // }
-
-  // componentDidMount(){
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  // }
-
-  // componentWillReceiveProps(){
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  //   this.setState({count: this.state.count +1 });
-  //   console.log(this.state.count)
-  // }
-
-  
 
   render() {
     return (
