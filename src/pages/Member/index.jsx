@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import './css.scss'
+import TopTitle from 'components/topTitle'
+import GoHome from 'components/goHome'
+
+import './index.scss'
 
 class Member extends React.Component {
 
@@ -22,9 +24,9 @@ class Member extends React.Component {
     render() {
         return (
             <div className="member-content">
-                <div className="mb-10 nav">
-                    <Link to="/">go to Home</Link>
-                </div>
+                <TopTitle title="Member" />
+
+                <GoHome />
 
                 <div className="content">
                     <p className="mb-10"><span>类成员状态：</span> {this.member}</p>

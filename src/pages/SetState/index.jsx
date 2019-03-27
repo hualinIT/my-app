@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {connect} from "react-redux";
+
+import TopTitle from 'components/topTitle'
+import GoHome from 'components/goHome'
+
+import './index.scss'
 
 class SetState extends React.Component {
 
@@ -7,8 +13,16 @@ class SetState extends React.Component {
         count: 1
     }
 
-    componentDidMount() {
+    onChangeState = () => {
+        this.setState({ count: this.state.count + 1 }, () => {console.log("onchnage===cb1===", this.state.count);})
+        console.log({ count: this.state.count })
+        this.setState({ count: this.state.count + 1 }, () => {console.log("onchnage===cb1===", this.state.count);})
+        console.log({ count: this.state.count })
+        this.setState({ count: this.state.count + 1 }, () => {console.log("onchnage===cb1===", this.state.count);})
+        console.log({ count: this.state.count })
+    }
 
+    componentDidMount() {
         // this.setState({ count: this.state.count + 1 }, () => {console.log("cb1===", this.state.count);})
         // console.log({ count: this.state.count })
 
@@ -31,20 +45,29 @@ class SetState extends React.Component {
     render() {
         return (
             <div className="state-content">
-                <div className="mb-10 nav">
-                    <Link to="/">go to Home</Link>
-                </div>
+                <TopTitle title="setState" />
+                <GoHome />
 
                 <div className="content">
                     <p>state中的count值： {this.state.count}</p>
                 </div>
 
                 <div className="btns">
-
+                    <div className="btn" onClick={this.onChangeState}>改变state</div>
                 </div>
             </div>
         )
     }
 }
 
-export default SetState;
+const mapStateToProps = state => {
+    console.log({state})
+
+    return {
+        reducer: state.wechat
+    }
+};
+  
+export default connect(mapStateToProps)(SetState)
+
+// export default SetState;

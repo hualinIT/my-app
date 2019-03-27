@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import TopTitle from 'components/topTitle'
+
 class Home extends React.Component {
     render() {
         return (
             <div>
-                <p>这是首页</p>
+                <TopTitle title="首页"/>
 
                 <div className="mb-20">
                     <Link to="/member">go to Member</Link>
@@ -16,7 +18,7 @@ class Home extends React.Component {
                 </div>
 
                 <div className="mb-20">
-                    <Link to="/provider">go to provider</Link>
+                    <Link to="/providerNew">go to providerNew</Link>
                 </div>
 
                 <div className="mb-20">

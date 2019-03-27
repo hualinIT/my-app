@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
+import TopTitle from 'components/topTitle'
+import GoHome from 'components/goHome'
 import Child from './componets/child'
 
 class ProviderOld extends React.Component {
@@ -16,9 +17,9 @@ class ProviderOld extends React.Component {
     render() {
         return (
             <div className="provider-content">
-                <div className="mb-10 nav">
-                    <Link to="/">go to Home</Link>
-                </div>
+                <TopTitle title="ProviderOld" />
+
+                <GoHome />
 
                 <div className="content">
                     <Child />
