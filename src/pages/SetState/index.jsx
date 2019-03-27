@@ -8,16 +8,24 @@ class SetState extends React.Component {
     }
 
     componentDidMount() {
-        console.log({count: this.state.count})
 
-        this.setState({count: this.state.count + 1})
-        console.log({count: this.state.count})
+        // this.setState({ count: this.state.count + 1 }, () => {console.log("cb1===", this.state.count);})
+        // console.log({ count: this.state.count })
 
-        this.setState({count: this.state.count + 1})
-        console.log({count: this.state.count})
+        // this.setState({ count: this.state.count + 1 }, () => {console.log("cb2===", this.state.count);})
+        // console.log({ count: this.state.count })
 
-        this.setState({count: this.state.count + 1})
-        console.log({count: this.state.count})
+        // this.setState({ count: this.state.count + 1 }, () => {console.log("cb3===", this.state.count);})
+        // console.log({ count: this.state.count })
+
+        this.setState((state) => ({count: state.count + 1}), () => {console.log("cb1===", this.state.count)});
+        this.setState((state) => ({count: state.count + 1}), () => {console.log("cb2===", this.state.count)});
+        this.setState((state) => ({count: state.count + 1}), () => {console.log("cb3===", this.state.count)});
+
+        setTimeout(() => {
+            this.setState({ count: this.state.count + 1 }); //这会立刻引发重新渲染
+            console.log("setTimeout-count===", this.state.count);
+        }, 0)
     }
 
     render() {
@@ -28,7 +36,11 @@ class SetState extends React.Component {
                 </div>
 
                 <div className="content">
-                   <p>state中的count值： {this.state.count}</p>
+                    <p>state中的count值： {this.state.count}</p>
+                </div>
+
+                <div className="btns">
+
                 </div>
             </div>
         )

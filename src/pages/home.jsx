@@ -10,7 +10,7 @@ class Home extends React.Component {
                 <div className="mb-20">
                     <Link to="/member">go to Member</Link>
                 </div>
-                
+
                 <div className="mb-20">
                     <Link to="/setState">go to setState</Link>
                 </div>

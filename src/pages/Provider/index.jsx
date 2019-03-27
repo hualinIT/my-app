@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Child from './componets/child'
 
-import {ThemeProvider} from './themeContext'
+import { ThemeProvider } from './themeContext'
 
 class ProviderExp extends React.Component {
 
@@ -15,7 +15,7 @@ class ProviderExp extends React.Component {
                 </div>
 
                 <div className="content">
-                    <ThemeProvider value={{mainColor: 'green', textColor: 'red'}}>
+                    <ThemeProvider value={{ mainColor: 'green', textColor: 'red' }}>
                         <Child />
                     </ThemeProvider>
                 </div>
