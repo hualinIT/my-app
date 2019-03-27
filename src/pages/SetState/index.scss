@@ -1,0 +1,12 @@
+.btns {
+    display: flex;
+    justify-content: center;
+    .btn {
+        flex-basis: 100px;
+        height: 30px;
+        line-height: 30px;
+        background: #00ebff;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+}
