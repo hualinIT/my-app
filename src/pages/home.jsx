@@ -24,6 +24,10 @@ class Home extends React.Component {
                 <div className="mb-20">
                     <Link to="/providerOld">go to providerOld</Link>
                 </div>
+
+                <div className="mb-20">
+                    <Link to="/hooksExample">go to hooksExample</Link>
+                </div>
             </div>
         );
     }
