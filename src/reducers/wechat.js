@@ -1,7 +1,7 @@
 const initialState = {
     projectName: 'hahahaha'
   };
-  
+
   export default function counter(state = initialState, action) {
     let newState = state;
     switch (action.type) {

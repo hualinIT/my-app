@@ -1,11 +1,15 @@
 import React from 'react'
 
-import TopTitle from 'components/topTitle'
-import GoHome from 'components/goHome'
+// import TopTitle from 'components/topTitle'
+// import GoHome from 'components/goHome'
+
+import withTitle from 'hoc/withTitle'
 
 import './index.scss'
 
 class Member extends React.Component {
+
+    static title = 'member'
 
     member = 1;
 
@@ -24,9 +28,8 @@ class Member extends React.Component {
     render() {
         return (
             <div className="member-content">
-                <TopTitle title="Member" />
-
-                <GoHome />
+                {/* <TopTitle title="Member" />
+                <GoHome /> */}
 
                 <div className="content">
                     <p className="mb-10"><span>类成员状态：</span> {this.member}</p>
@@ -42,4 +45,4 @@ class Member extends React.Component {
     }
 }
 
-export default Member;
+export default withTitle(Member);

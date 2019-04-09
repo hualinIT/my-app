@@ -135,6 +135,7 @@ module.exports = function(webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
+      isEnvDevelopment && 'react-hot-loader/patch',
       isEnvDevelopment &&
         require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
@@ -267,7 +268,8 @@ module.exports = function(webpackEnv) {
         'react-native': 'react-native-web',
         // 自己添加
         pages: paths.pages,
-        components: paths.components
+        components: paths.components,
+        hoc: paths.hoc
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -304,7 +306,6 @@ module.exports = function(webpackEnv) {
               options: {
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
-                
               },
               loader: require.resolve('eslint-loader'),
             },
@@ -339,6 +340,8 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                  ['react-hot-loader/babel'],
+
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
@@ -471,6 +474,9 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+       // hot module replace by hualin
+      // isEnvDevelopment &&  new webpack.HotModuleReplacementPlugin(),
+      
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
