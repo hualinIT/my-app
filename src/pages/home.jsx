@@ -12,9 +12,9 @@ class Home extends React.Component {
     }
 
     buildArr = () => {
-        let len = 200, tempArr = [];
+        let len = 10, tempArr = [];
 
-        for (let i = 1; i < len; i++) {
+        for (let i = 1; i <= len; i++) {
             tempArr.push({
                 name: `a${i}`,
                 id: `b${i}`
@@ -23,7 +23,7 @@ class Home extends React.Component {
         return  tempArr;
     }
 
-    changeSort = () => {
+    reverseSort = () => {
         this.setState((prestate) => ({
             sorts: prestate.sorts.reverse()
         }))
@@ -31,7 +31,7 @@ class Home extends React.Component {
 
     removeFirstItem = () => {
         this.setState((prestate) => {
-            prestate.sorts.splice(0,1);
+            prestate.sorts.splice(100,1);
             return {
                 sorts: prestate.sorts
             }
@@ -72,18 +72,40 @@ class Home extends React.Component {
                     <div className="left">6768</div>
                     <div className="right">777</div>
                 </div> */}
-                <div onClick={this.changeSort} className="changeSort">changeState1</div>
+                <div onClick={this.reverseSort} className="changeSort">倒序操作</div>
                 <div onClick={this.removeFirstItem} className="changeSort">remove</div>
                 <ul>
                     {this.state.sorts.map((item, index) => {
-                        return <li key={index}>{item.name}<input type="text" /></li>
+                        // return <li key={index}>{item.name}<input type="text" /></li>
                         // return <li key={item.id}>{item.name}<input type="text"/></li>
+
+                        return  <Item item={item} key={index} />
                     })}
                 </ul>
-
-
             </div>
         );
+    }
+}
+
+class Item  extends React.Component {
+
+    componentDidMount() {
+        console.log('===>mount')
+    }
+
+    componentDidUpdate() {
+        console.log('===>didUpdate')
+    }
+
+    componentWillUnmount() {
+        console.log('===>unmount')
+    }
+    
+    render() {
+        let {item} = this.props;
+
+        return React.createElement("li", null, item.name, React.createElement("input", {type: "text"}))
+            // <li>{item.name}<input type="text"/></li>
     }
 }
 
@@ -150,3 +172,4 @@ export default Home;
 //         })
 //     }
 // }
+

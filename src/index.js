@@ -19,7 +19,10 @@ const render = (Component) => {
         <AppContainer>
             <App />
         </AppContainer>,
-        root
+        root,
+        function() {
+            console.info(999)
+        }
     )
 }
 

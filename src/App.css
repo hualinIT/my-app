@@ -63,3 +63,30 @@ html, body {
   border: 1px solid #ccc;
   cursor: pointer;
 }
+
+.container1 {
+  margin-bottom: 20px;
+  background: #fff000;
+}
+.container {
+  /* display: flow-root;
+  overflow: hidden; */
+}
+
+.column1 {
+  background-color: green;
+  margin: 10px 1%;
+  text-align: left;
+}
+
+.column2 {
+  background-color: #61dafb;
+  margin: 20px 1%;
+  text-align: left;
+}
+
+.column3 {
+  background-color: blueviolet;
+  text-align: left;
+}
+
