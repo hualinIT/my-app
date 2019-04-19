@@ -67,15 +67,6 @@ class Home extends React.Component {
                     <Link to="/setStateBtn">go to setStateBtn</Link>
                 </div>
 
-                {/* <div className="container">
-                    <div className="center">
-                        <div>123</div>
-                        <div>456</div>
-                        <div>789</div>
-                    </div>
-                    <div className="left">6768</div>
-                    <div className="right">777</div>
-                </div> */}
                 <div onClick={this.reverseSort} className="changeSort">倒序操作</div>
                 <div onClick={this.removeFirstItem} className="changeSort">remove</div>
                 <ul>
