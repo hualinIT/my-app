@@ -7,6 +7,7 @@ import SetState from 'pages/SetState';
 import ProviderNew from 'pages/ProviderNew';
 import ProviderOld from 'pages/ProviderOld';
 import hooksExample from 'pages/Hooks';
+import SetStateBtn from 'pages/SetStateBtn';
 
 const Routes = () => (
     <Router>
@@ -17,6 +18,7 @@ const Routes = () => (
             <Route path="/providerNew" component={ProviderNew} />
             <Route path="/providerOld" component={ProviderOld} />
             <Route path="/hooksExample" component={hooksExample} />
+            <Route path="/setStateBtn" component={SetStateBtn} />
         </div>
     </Router>
 )

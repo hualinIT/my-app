@@ -63,6 +63,10 @@ class Home extends React.Component {
                     <Link to="/hooksExample">go to hooksExample</Link>
                 </div>
 
+                <div className="mb-20">
+                    <Link to="/setStateBtn">go to setStateBtn</Link>
+                </div>
+
                 {/* <div className="container">
                     <div className="center">
                         <div>123</div>
