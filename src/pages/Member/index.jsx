@@ -19,11 +19,12 @@ class Member extends React.Component {
 
     onChangeMember = () => {
         this.member = 10;
+        // this.forceUpdate();
     }
 
     onChangeStateMember = () => {
-        this.setState(false)
-        // this.setState({ member: 10 })
+        // this.setState(false)
+        this.setState({ member: 10 })
     }
 
     render() {

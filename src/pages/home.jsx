@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import TopTitle from 'components/topTitle'
+import 'normalize.css'
 
 class Home extends React.Component {
     constructor(){
@@ -12,7 +13,7 @@ class Home extends React.Component {
     }
 
     buildArr = () => {
-        let len = 10, tempArr = [];
+        let len = 3, tempArr = [];
 
         for (let i = 1; i <= len; i++) {
             tempArr.push({
@@ -73,8 +74,8 @@ class Home extends React.Component {
                     {this.state.sorts.map((item, index) => {
                         // return <li key={index}>{item.name}<input type="text" /></li>
                         // return <li key={item.id}>{item.name}<input type="text"/></li>
-
-                        return  <Item item={item} key={index} />
+                        console.log(React.createElement(Item, { item: item, key: item.id, className: "hhh" }))
+                        return  <Item item={item} key={item.id} className="hhh" />
                     })}
                 </ul>
             </div>
@@ -82,7 +83,7 @@ class Home extends React.Component {
     }
 }
 
-class Item  extends React.Component {
+class Item  extends React.PureComponent {
 
     componentDidMount() {
         console.log('===>mount')
@@ -99,8 +100,9 @@ class Item  extends React.Component {
     render() {
         let {item} = this.props;
 
-        return React.createElement("li", null, item.name, React.createElement("input", {type: "text"}))
-            // <li>{item.name}<input type="text"/></li>
+        console.log(React.createElement("li", { className: "hua" }, item.name, React.createElement("input", { type: "text" })))
+        return React.createElement("li", { className: "hua" }, item.name, React.createElement("input", { type: "text" }));
+            // <li className="hua">{item.name}<input type="text"/></li>
     }
 }
 
@@ -167,4 +169,3 @@ export default Home;
 //         })
 //     }
 // }
-

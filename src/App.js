@@ -3,7 +3,6 @@ import Routes from './routes/index.jsx';
 import { Provider } from 'react-redux';
 import createStore from './store/createStore';
 // import logo from './logo.svg';
-import './App.css';
 
 const store = createStore();
 

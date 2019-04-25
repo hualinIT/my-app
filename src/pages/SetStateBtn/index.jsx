@@ -9,9 +9,9 @@ class SetStateBtn extends React.Component {
     }
 
     componentDidMount() {
-        this.setState(preState => {
+        this.setState(preState => ({
             importBtn: preState.importBtn.unshift(<div className="btn">按钮一</div>)
-        })
+        }))
     }
 
     // addBtn = () => {
