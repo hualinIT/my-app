@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './index.scss'
 
 class GoHome extends React.Component {
-
     render() {
         return (
            <div className="go-home">

@@ -1,5 +1,5 @@
 .go-home {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -7,6 +7,7 @@
     line-height: 50px;
     text-align: center;
     background: #92848f;
+    z-index: 100;
     .link {
         display: block;
         height: 100%;

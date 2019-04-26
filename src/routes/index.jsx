@@ -8,6 +8,7 @@ import ProviderNew from 'pages/ProviderNew';
 import ProviderOld from 'pages/ProviderOld';
 import hooksExample from 'pages/Hooks';
 import SetStateBtn from 'pages/SetStateBtn';
+import ItemList from 'pages/ItemList';
 
 const Routes = () => (
     <Router>
@@ -19,6 +20,7 @@ const Routes = () => (
             <Route path="/providerOld" component={ProviderOld} />
             <Route path="/hooksExample" component={hooksExample} />
             <Route path="/setStateBtn" component={SetStateBtn} />
+            <Route path="/itemList" component={ItemList} />
         </div>
     </Router>
 )
