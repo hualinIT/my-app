@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AppContainer } from 'react-hot-loader'
-
 import './common/style/index.scss';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
@@ -19,10 +18,7 @@ const render = (Component) => {
         <AppContainer>
             <App />
         </AppContainer>,
-        root,
-        function() {
-            console.info(999)
-        }
+        root
     )
 }
 

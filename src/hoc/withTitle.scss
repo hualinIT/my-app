@@ -1,0 +1,28 @@
+.go-home {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #92848f;
+    z-index: 100;
+    .link {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff;
+    }
+}
+
+.title-content {
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #00b0ff;
+    font-weight: bold;
+    color: #fff;
+}

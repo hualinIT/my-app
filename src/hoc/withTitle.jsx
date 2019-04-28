@@ -1,15 +1,20 @@
-import React from 'react'
-
-import TopTitle from 'components/topTitle'
-import GoHome from 'components/goHome'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './withTitle.scss';
 
 const withTitle = (Component) => {
     const NewComponent = () => {
         return (
             <div>
-                <TopTitle  title={Component.title}/>
-                <GoHome />
+                <div className="title-content">
+                    {Component.title || '无标题'}
+                </div>
+
                 <Component />
+
+                <div className="go-home">
+                    <Link  className="link" to="/">回到首页</Link>
+                </div>
             </div>
         )
     }

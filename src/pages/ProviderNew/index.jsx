@@ -12,7 +12,6 @@ class ProviderNew extends React.Component {
         return (
             <div className="provider-content">
                 <TopTitle  title="ProviderNew" />
-
                 <GoHome />
 
                 <div className="content">

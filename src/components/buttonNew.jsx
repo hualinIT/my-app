@@ -9,8 +9,8 @@ class ButtonNew extends React.Component {
             <ThemeConsumer>
                 {
                     theme => <div className="button" style={{color: theme.mainColor}}>按钮</div>
-                 }
-            </ThemeConsumer> 
+                }
+            </ThemeConsumer>
         )
     }
 }

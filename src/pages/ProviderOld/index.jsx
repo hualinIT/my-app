@@ -6,6 +6,8 @@ import GoHome from 'components/goHome'
 import Child from './componets/child'
 
 class ProviderOld extends React.Component {
+    static title = 'ProviderOld'
+
     getChildContext() {
         return {
             theme: {
@@ -18,7 +20,6 @@ class ProviderOld extends React.Component {
         return (
             <div className="provider-content">
                 <TopTitle title="ProviderOld" />
-
                 <GoHome />
 
                 <div className="content">

@@ -1,28 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import TopTitle from 'components/topTitle'
-
 // import { Anchor } from 'antd';
 // const { Link } = Anchor;
 
-
 class Home extends React.Component {
-    constructor(){
-        super();
-    }
-
     render() {
         return (
             <div>
                 <TopTitle title="首页"/>
-                {/* <Anchor>
-                    <Link className="mb_20" href="/member" title="go to Member" />
-                    <Link className="mb_20" href="/setState" title="go to setState"  />
-                    <Link className="mb_20" href="/providerNew" title="go to providerNew"  />
-                    <Link className="mb_20" href="/providerOld" title="go to providerOld"  />
-                    <Link className="mb_20" href="/hooksExample" title="go to hooksExample"  />
-                    <Link className="mb_20" href="/setStateBtn" title="go to setStateBtn"  />
-                </Anchor> */}
 
                 <div className="mb-20">
                     <Link to="/itemList">go to itemList</Link>
@@ -57,3 +43,12 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+/* <Anchor>
+    <Link className="mb_20" href="/member" title="go to Member" />
+    <Link className="mb_20" href="/setState" title="go to setState"  />
+    <Link className="mb_20" href="/providerNew" title="go to providerNew"  />
+    <Link className="mb_20" href="/providerOld" title="go to providerOld"  />
+    <Link className="mb_20" href="/hooksExample" title="go to hooksExample"  />
+    <Link className="mb_20" href="/setStateBtn" title="go to setStateBtn"  />
+</Anchor> */

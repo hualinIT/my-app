@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, List} from 'antd';
+import {Button} from 'antd';
 
 import withTitle from 'hoc/withTitle'
 import './index.scss'
@@ -8,7 +8,7 @@ class ItemList extends React.Component {
     constructor(){
         super();
         this.state = {
-            datas:  this.buildData(20) || []
+            datas:  this.buildData(10) || []
         }
     }
 
@@ -16,8 +16,8 @@ class ItemList extends React.Component {
         let len = length, tempArr = [];
         for (let i = 1; i <= len; i++) {
             tempArr.push({
-                name: `a${i}`,
-                id: `b${i}`
+                name: `A—${i}`,
+                id: `B${i}`
             })
         }
         return  tempArr;
@@ -51,22 +51,11 @@ class ItemList extends React.Component {
                 <div className="item-list-wrap">
                     <ul className="item-list">
                         {datas.map((item, index) => {
-                            // return <li key={index}>{item.name}<input type="text" /></li>
-                            // return <li key={item.id}>{item.name}<input type="text"/></li>
-
-                            console.log(React.createElement(Item, { item: item, key: item.id, className: "hhh" }))
-                            return  <Item className="item-li" item={item} key={item.id}  />
+                            // return  <Item className="item-li" item={item} key={item.id}  />
+                            return  <Item className="item-li" item={item} key={index}  />
                         })}
                     </ul>
                 </div>
-
-                {/* <List
-                    size="large"
-                    bordered
-                    dataSource={datas}
-                    renderItem={itemData => (<List.Item>{<Item item={itemData} key={itemData.id} />}</List.Item>)}
-                /> */}
-
             </div>
         )
     }
@@ -84,14 +73,23 @@ class Item  extends React.PureComponent {
     componentWillUnmount() {
         console.log('===>unmount')
     }
-    
+
     render() {
         let {item, className} = this.props;
 
-        console.log(React.createElement("li", { className: className }, item.name, React.createElement("input", { type: "text" })))
-        return React.createElement("li", { className: className }, item.name, React.createElement("input", { type: "text" }));
-            // <li className="className">{item.name} <input type="text"/></li>
+        console.log('===>', React.createElement("li", { className: className }, item.name, "  ", React.createElement("input", { type: "text" })))
+        // return React.createElement("li", { className: className}, item.name, "  ", React.createElement("input", { type: "text" }));
+
+        return  <li className={className}>{item.name}  <input type="text"/></li>
     }
 }
 
 export default withTitle(ItemList);
+
+
+/* <List
+    size="large"
+    bordered
+    dataSource={datas}
+    renderItem={itemData => (<List.Item>{<Item item={itemData} key={itemData.id} />}</List.Item>)}
+/> */
