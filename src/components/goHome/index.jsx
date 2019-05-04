@@ -6,9 +6,9 @@ import './index.scss'
 class GoHome extends React.Component {
     render() {
         return (
-           <div className="go-home">
-               <Link  className="link" to="/">回到首页</Link>
-           </div>
+            <div className="go-home">
+                <Link  className="link" to="/">回到首页</Link>
+            </div>
         )
     }
 }

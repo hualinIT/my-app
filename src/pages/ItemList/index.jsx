@@ -42,7 +42,7 @@ class ItemList extends React.Component {
         const {datas} = this.state;
 
         return (
-            <div className="item-content">
+            <div className="item-content ddd">
                 <div className="mb_20">
                     <Button className="mr_10" type="primary" onClick={this.reverseSort}>倒序操作</Button>
                     <Button type="primary" onClick={this.removeFirstItem}>remove first</Button>

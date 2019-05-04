@@ -3,7 +3,6 @@ import React from 'react'
 import {ThemeConsumer} from 'pages/ProviderNew/themeContext'
 
 class ButtonNew extends React.Component {
-
     render() {
         return (
             <ThemeConsumer>

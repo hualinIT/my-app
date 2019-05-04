@@ -7,6 +7,8 @@ import GoHome from 'components/goHome'
 
 import './index.scss'
 
+
+
 class SetState extends React.Component {
 
     state = {
@@ -47,7 +49,7 @@ class SetState extends React.Component {
                     <Button type="private" onClick={this.onChangeState}>change state</Button>
                 </div>
 
-                <div className="content">
+                <div className="content ddd">
                     <p>state中的count值： {this.state.count}</p>
                 </div>
             </div>
@@ -62,7 +64,7 @@ const mapStateToProps = state => {
         reducer: state.wechat
     }
 };
-  
+
 export default connect(mapStateToProps)(SetState)
 
 // export default SetState;
