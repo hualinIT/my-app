@@ -43,21 +43,28 @@ function getBase64(img, callback) {
         imgs.src = reader.result
     }
 
+    reader.onprogress = function(res) {
+        console.log(res)
+    }
+
     reader.readAsDataURL(img);
 
 }
 
 function beforeUpload(file) {
-    getBase64(file, (r) => {console.log(1)})
-    const isJPG = file.type === 'image/jpeg';
-    if (!isJPG) {
-        message.error('You can only upload JPG file!');
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-        message.error('Image must smaller than 2MB!');
-    }
-    return isJPG && isLt2M;
+    console.log('===>before',file)
+    return false;
+    // getBase64(file, (r) => {console.log(file)})
+
+    // const isJPG = file.type === 'image/jpeg';
+    // if (!isJPG) {
+    //     message.error('You can only upload JPG file!');
+    // }
+    // const isLt2M = file.size / 1024 / 1024 < 2;
+    // if (!isLt2M) {
+    //     message.error('Image must smaller than 2MB!');
+    // }
+    // return isJPG && isLt2M;
 }
 
 class SetStateBtn extends React.Component {
@@ -67,7 +74,7 @@ class SetStateBtn extends React.Component {
     }
 
     handleChange = (info) => {
-        console.log('----', info)
+        console.log('---->handleChange', info)
         if (info.file.status === 'uploading') {
         this.setState({ loading: true });
             return;
@@ -95,9 +102,7 @@ class SetStateBtn extends React.Component {
         // img.src = 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3162030773,185836582&fm=173&app=49&f=JPEG?w=218&h=146&s=A0B058954069250D6B2DEC630300F051'
     }
 
-    componentDidUpdate() {
-        console.log(document.getElementById('s_mod_weather'))
-    }
+    componentDidUpdate() {}
 
     render() {
         const uploadButton = (
@@ -121,8 +126,6 @@ class SetStateBtn extends React.Component {
                 >
                     {imageUrl ? <img src={imageUrl} alt="avatar" /> : uploadButton}
                 </Upload>
-
-                <div className="ddd">232424</div>
             </div>
         )
     }
