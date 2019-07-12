@@ -14,6 +14,17 @@ class Member extends React.Component {
         member: 2
     }
 
+    componentDidMount() {
+        fetch('http://47.101.11.2:3000/fdb')
+        .then(function(response) {
+            console.log({response})
+            return response.json();
+        })
+        .then(function(myJson) {
+            console.log({myJson});
+        });
+    }
+
     onChangeMember = () => {
         this.member = 10;
         // this.forceUpdate();
