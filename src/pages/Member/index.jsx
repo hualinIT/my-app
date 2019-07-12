@@ -23,6 +23,8 @@ class Member extends React.Component {
         .then(function(myJson) {
             console.log({myJson});
         });
+        console.log(1);
+        console.log(1);
     }
 
     onChangeMember = () => {
